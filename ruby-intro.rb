@@ -97,16 +97,16 @@ my_favorite_number = 7
 
 
 
-def login(id, password)
-arr = [ '!', '#', '$' ]
-    if id != password && id.length >= 6 && password.length >= 6 && arr.any? { |letter| password.include? letter } &&  password != 'password' && id.exclude? '!' && id.exclude? '#' && id.exclude? '$' && id.exclude? ' '
+# def login(id, password)
+# arr = [ '!', '#', '$' ]
+#     if id != password && id.length >= 6 && password.length >= 6 && arr.any? { |letter| password.include? letter } &&  password != 'password' && id.exclude? '!' && id.exclude? '#' && id.exclude? '$' && id.exclude? ' '
 
-        "good"
-    else 
-        "bad"
-    end
-end
-p login("sss!sss", "asdfq!")
+#         "good"
+#     else 
+#         "bad"
+#     end
+# end
+# p login("sss!sss", "asdfq!")
 
 # arr.any? { |letter| id.exclude? letter } 
 # name1= "raul"
@@ -114,3 +114,57 @@ p login("sss!sss", "asdfq!")
 # arr = [ '!', '#', '$' ]
 # s = "abc12!"
 # p arr.any? { |letter| s.include? letter } # Will return true if any element is present
+
+
+# Write a loop that prints the numbers 1 to 20.
+
+
+
+# range = 1..20
+# range.each do |value|
+#     p value
+# end
+
+
+# Write a loop that prints the numbers 1 to 20 using a different approach than previously used.
+
+# p (1..20).to_a
+#  test_array = Array(1..20)
+
+# num = 1
+# array1 = []
+# while num <= 20
+#     p num
+# #    array1 << num
+#    num += 1
+# end
+
+
+# Write a loop that prints only even numbers from 20 to 0.
+
+even_range = Array(1..20).reverse
+
+#     even_range.map do |value|
+#          value.even?
+         
+     
+        
+#     end
+
+even_range.each do |value|
+    if value % 2 == 0
+        p value
+    end
+    end
+
+
+
+
+
+# Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
+# Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
+# Create a method that takes in an array of numbers and returns the largest number in the array.
+# Create a method that takes in an array of numbers and returns the smallest number in the array.
+# Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
+# Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
+# Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
