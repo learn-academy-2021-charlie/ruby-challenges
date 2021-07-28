@@ -26,6 +26,6 @@ elsif weapon1 == 'paper' and weapon2 == 'scissors'
 elsif weapon1 == 'paper' and weapon2 == 'paper'
     puts 'tie'
 else
-    puts 'test'
+    puts 'fail'
 end
 
