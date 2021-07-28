@@ -33,15 +33,13 @@ is_invalid(10)
 
 #Create a method that takes in a string and determines if the string is a palindrome.
 def is_palindrome(word)
-   array = word.split("")
-    for array <= [array.length]
-        if array[i] == array[array.length - i - 1] 
-            p 'this is a palindrome'
-        else 
-            p 'this is not a palindrome'
-        end
-    end
-end
+ if word == word.reverse
+    p 'this is a palindrome'
+    else 
+     p 'this is not a palindrome'
+     end
+ end
+ 
 is_palindrome("bob")
 
     
