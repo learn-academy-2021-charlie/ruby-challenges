@@ -42,4 +42,11 @@ def is_palindrome(word)
  
 is_palindrome("bob")
 
-    
+def usernameAndPasswordChecker(userid, password)
+    if userid == password
+        p 'user id and password must not be the same '
+    elsif userid < 6 || password < 6
+        p 'user ID and or password must be at least 6 characters'
+    elsif password.include? '!#$'
+        p   
+    end
