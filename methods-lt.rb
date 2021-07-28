@@ -46,13 +46,15 @@ def check_login(id, password)
     if password != id and id.length >= 6 and password.length >= 6 and
         (password.include?'!' or password.include?'#' or password.include?'$') and
         (!id.include?'!' and !id.include?'#' and !id.include?'$') and
-        id.length == no_spaces.length and password != 'password'
+        id.length == id_no_spaces.length and password != 'password'
         true
     else
         false
     end
 end
 
-p check_login('Tlcomte', 'Tlcomte')
-p check_login('id', 'pw!')
-p check_login('hey hello', 'pw')
+p check_login('Tlcomte', 'Tlcomte') # false
+p check_login('id', 'pw!') #false, (needs to be >= 6 chars)
+p check_login('hey hello', 'pw') #false, spaces in id
+p check_login('idididi#did', 'passsssssword') #false, # in id
+p check_login('123456', '12345!6') #true
