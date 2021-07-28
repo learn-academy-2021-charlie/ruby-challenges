@@ -27,5 +27,14 @@ p my_name.downcase
 p my_name.include?'m'
 p my_name.capitalize
 
-#test push 3
-
+p "enter: rock, paper, scissors"
+selection_user1 = gets.strip
+selection_user2 = gets.strip
+p selection_user1, selection_user2
+ if selection_user1.strip == "rock" && selection_user2.strip == "scissors"
+    puts "user1 wins"
+ elsif selection_user1.strip == "scissors" && selection_user2.strip == "rock" 
+    puts "user2 wins"
+ elsif selection_user1.strip == "rock" && selection_user2.strip == "rock"
+    puts "tie"
+ end 
