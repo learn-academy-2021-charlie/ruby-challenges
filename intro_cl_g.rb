@@ -13,13 +13,13 @@
 # p my_array[3]
 # p my_array.reverse!
 # top_fav_shows = []
-# top_fav_shows << my_array[0] 
+# top_fav_shows << my_array[0]
 # top_fav_shows << my_array[2]
 # p top_fav_shows
 
 # create user 1 and user 2
 # prompt user 1 and user 2
-puts "user 1 type in rock, paper or scissors" 
+puts "user 1 type in rock, paper or scissors"
 user1 = gets.chomp
 puts "user 2 type in rock, paper or scissors"
 user2 = gets.chomp
