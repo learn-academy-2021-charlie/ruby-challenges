@@ -11,7 +11,7 @@ user1_pick = gets.chomp
 p "player2 please type either rock, paper, or scissors"
 user2_pick = gets.chomp
 if user1_pick == 'rock' && user2_pick == 'scissors'
-    puts 'user1 wins!'
+  puts 'user1 wins!'
 elsif user1_pick == 'scissors' && user2_pick == 'scissors'
     puts 'There is a tie!'
 elsif user1_pick == "paper" && user2_pick == "scissors"
