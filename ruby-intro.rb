@@ -1,4 +1,4 @@
-my_favorite_number = 7
+# my_favorite_number = 7
 # my_favorite_number = my_favorite_number / 2
 # someones_favorite = 13
 # someones_favorite = 7
@@ -58,8 +58,16 @@ my_favorite_number = 7
 #     end
 # end
 
-# p is_even 5
+# def is_even2 n1
+#     if n1.even?
+#         'even'
+#     else
+#         n1
+#     end
+# end
 
+# # p is_even 5
+# p is_even2 5
 
 # def is_valid(n1)
 #     if n1 >= 1 && n1 <= 10
@@ -95,20 +103,40 @@ my_favorite_number = 7
 # User ID cannot contain the following characters: !#$ or spaces
 # Password cannot be the word "password".
 
+def login(id, password)
+    
+    arr = [ '!', '#', '$', ' ' ]
+    # !! -- here we can check each element in the array with .any? -- 
+    # p arr.any? { |letter| id.include? letter }
+    # p !arr.any? { |letter| password.include? letter }
+
+    if arr.any? { |letter| id.include? letter }
+
+        'first bad'
+        
+    elsif !arr.any? { |letter| password.include? letter }
+
+        "second bad"
+    
+    elsif password.length < 6 || id.length < 6
+
+        "third bad"
+
+    # elsif password == 'password'  this is checked by the second elsif
+        
+        "bad"
+
+    else 
+
+        "good"
+        # prompt here for id and password
 
 
-# def login(id, password)
-# arr = [ '!', '#', '$' ]
-#     if id != password && id.length >= 6 && password.length >= 6 && arr.any? { |letter| password.include? letter } &&  password != 'password' && id.exclude? '!' && id.exclude? '#' && id.exclude? '$' && id.exclude? ' '
+    end
+end
+p login("sssssss", "pass#word")
 
-#         "good"
-#     else 
-#         "bad"
-#     end
-# end
-# p login("sss!sss", "asdfq!")
 
-# arr.any? { |letter| id.exclude? letter } 
 # name1= "raul"
 # p name1.include? 'al'
 # arr = [ '!', '#', '$' ]
@@ -142,22 +170,20 @@ my_favorite_number = 7
 
 # Write a loop that prints only even numbers from 20 to 0.
 
-even_range = Array(1..20).reverse
+# even_range = Array(1..20).reverse
 
-#     even_range.map do |value|
-#          value.even?
+# #     even_range.map do |value|
+# #          value.even?
          
      
         
+# #     end
+
+# even_range.each do |value|
+#     if value % 2 == 0
+#         p value
 #     end
-
-even_range.each do |value|
-    if value % 2 == 0
-        p value
-    end
-    end
-
-
+#     end
 
 
 
