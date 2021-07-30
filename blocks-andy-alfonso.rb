@@ -25,3 +25,11 @@ end
 p word_array
 
 p my_array.sort{|a,b|a-b}[-1]
+
+ def sort_num arr
+    arr.sort{|a,b|a-b}[-1]
+ end
+
+num_set=["3","6","9"]
+
+p sort_num num_set

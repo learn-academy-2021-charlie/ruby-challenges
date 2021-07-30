@@ -1,62 +1,36 @@
-# Ruby Challenges
+Strings Challenges
 
-This repository holds the Ruby pair programming challenges for the Charlie 2021 cohort.
+Create a variable and return it in a sentence string interpolation
+Create a variable that contains a string and test some of the Ruby string methods
+.upcase
+.reverse
+.include?
+.capitalize
+Arrays Challenges
 
-- Anything wrapped in `< >` is an indication that this will be named uniquely, the `< >` are NOT actually added to the command
-- `$` is an indication of a command line prompt, the `$` is not included
-- Anything in `( )` is informational and not included in the command
-- The term `local/locally` means on your personal computer
-
-
-### Naming Conventions
-- The name of the repository should NOT be included in the name of the project.
-- Branch name: `topic-initial1-initial2` (ex. intro-a-s)
-- File name: `topic-student1-student2.rb` (ex. intro-austin-sarah)
-
-
-### Informational Commands
-Use this informational command to tell you what files have been modified and what phase of the git process you are on:  
-- $ `git status`  
-Use this informational command to see what branch you are currently on:  
-- $ `git branch`
+Create an array that contains the name of at least five TV shows
+Find the length of the array
+Return the first item in the array
+Return the fourth item in the array
+Permanently reverse the order of the array
+Create a new empty array for your top favorite TV shows
+From the full TV show array, add your top two favorite shows to the empty array
 
 
-### Do you need the repo locally?
-Use this command if you don't have the repository (folder) on your local machine:   
-- $ `git clone <repo-url> (pasted from clipboard on GitHub)`
 
+For the following Task challenge, use initialize and getter methods in your class
 
-### Need a branch that doesn't exist anywhere?
-Use this command if you need to create a branch that does not currently exist:  
-- $ `git checkout -b <topic-initial1-initial2>` (ex. intro-a-s)
+As a developer, I can create a class called Task.
+As a developer, I can create three instances (objects) of class Task. (e.g laundry = Task.new)
+As a developer, I can initialize each instance of class Task with a title.
+As a developer, I can see the title of each instance of class Task.
+As a developer, I can initialize each instance of class Task with a status that has a default value of 'incomplete'.
+As a developer, I can update the status of each instance of class Task when the task has been completed.
+For the following ColorPalette challenge use initialize and attr_accessor methods in your class
 
-
-### Need a branch that is on GitHub but not on your local?
-Use these commands if the repo you are working on has a branch but it is NOT on your local machine:  
-- $ `git fetch`
-- $ `git checkout <branch-name>`
-
-
-### Need to move to an existing branch?
-Use this command to move to a branch that exist on your local machine:  
-- $ `git checkout <branch-name>`  
-
-
-### Not sure what branch you are on?
-Use this informational command to see what branches exist on your local machine:  
-- $ `git branch`
-
-
-### Need code from GitHub pushed by someone else?
-Use these commands if you DO have the repository on your local machine but DON'T have the latest version of the code from GitHub:
-- $ `git branch` (make sure you are on the correct branch)
-- $ `git pull origin <branch-name>`
-
-
-### Have code locally that needs to go to GitHub?
-Use these commands to add the code you have on your local machine to GitHub:
-- $ `ls` (make sure you are in the correct directory)
-- $ `git status` (informational command, ensure you are on the correct branch and in the correct directory)
-- $ `git add .`
-- $ `git commit -m "meaningful message here"`
-- $ `git push origin <branch-name>`
+As a developer, I can create a class called ColorPalette.
+As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
+As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
+As a developer, I can print the value of each individual color.
+As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
+As a developer, I can change one or more colors of a given palette.
