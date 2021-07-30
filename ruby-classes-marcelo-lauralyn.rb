@@ -36,7 +36,7 @@ p laundry.status
 # As a developer, I can change one or more colors of a given palette.
 
 class ColorPalette
-    attr_reader :color1, :color2, :color3
+    attr_accessor :color1, :color2, :color3
     
     def initialize(color1, color2, color3)
         @color1 = color1
@@ -47,6 +47,7 @@ class ColorPalette
     def all_colors
         "#{@color1}, #{@color2}, #{@color3}"
     end
+
 end
 
 palet1 = ColorPalette.new('blue', 'red', 'blue')
@@ -56,5 +57,8 @@ p palet1
 puts palet2.color1
 p palet1.all_colors
 p palet2.all_colors
+
+palet2.color1 = 'red'
+
 p palet2.all_colors
 
