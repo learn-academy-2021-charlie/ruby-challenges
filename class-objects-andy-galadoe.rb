@@ -5,7 +5,6 @@ class Task
     @status = 'incomplete'
   end
   def completed 
-    @title = title
     @status = 'completed'
   end
   def title_info
@@ -15,7 +14,7 @@ end
 
 laundry = Task.new 'clothes', 'incomplete'
 grocery = Task.new 'food', 'incomplete'
-dinner = Task.new  'completed'
+dinner = Task.new  'food','incomplete'
  dinner.title_info 
 
 p dinner.completed
