@@ -44,26 +44,33 @@
 # password contain "!#$"
 # user id cant contain "!#$"
 # password cant be password
-puts "Enter User ID"
-userID = gets.chomp
-puts "Enter Password"
-password = gets.chomp
+# puts "Enter User ID"
+# userID = gets.chomp
+# puts "Enter Password"
+# password = gets.chomp
 
-def user_password(userID, password)
-  if userID == password
-    'cannot be the same'
-  elsif userID.length < 6 && password.length < 6
-    'User ID or Password not long enough'
-  elsif !password.include?('!') && !password.include?('#') && !password.include?('$')
-    'Password must include one of these characters: !, #, $'
-  elsif userID == userID.include?('!') || userID == userID.include?('$') || userID == userID.include?('#')
-    'User ID cannot contain these characters: !, #, $'
-  elsif password == 'password'
-    'Password can not be password'
-  else 
-    'User ID and password are correct'
-  end
+# def user_password(userID, password)
+#   if userID == password
+#     'cannot be the same'
+#   elsif userID.length < 6 && password.length < 6
+#     'User ID or Password not long enough'
+#   elsif !password.include?('!') && !password.include?('#') && !password.include?('$')
+#     'Password must include one of these characters: !, #, $'
+#   elsif userID == userID.include?('!') || userID == userID.include?('$') || userID == userID.include?('#')
+#     'User ID cannot contain these characters: !, #, $'
+#   elsif password == 'password'
+#     'Password can not be password'
+#   else 
+#     'User ID and password are correct'
+#   end
 
-end
+# end
     
-  p user_password(userID, password)
+#   p user_password(userID, password)
+
+#   i = 1
+# while i <= 20 
+#   puts i
+#   i += 1
+# end
+
