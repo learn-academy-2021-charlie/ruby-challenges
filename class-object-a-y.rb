@@ -8,24 +8,54 @@
 # - As a developer, I can initialize each instance of class Task with a title.
 # - As a developer, I can see the title of each instance of class Task.
 # - As a developer, I can initialize each instance of class Task with a status that has a default value of 'incomplete'.
-# - As a developer, I can update the status of each instance of class Task when the task has been completed.
-class Task 
-    attr_accessor :title, :status 
-    def initialize(title,status)
-        @title = title
-        @status = status
-    end
+# # - As a developer, I can update the status of each instance of class Task when the task has been completed.
+# class Task
+#     attr_accessor :title, :status
+#     def initialize(title,status)
+#         @title = title
+#         @status = status
+#     end
+# end
+#
+# laundry = Task.new('laundry','incomplete')
+# laundry.status = "completed"
+# cook = Task.new('cook','incomplete')
+# get_mails = Task.new('get mails','incomplete')
+#
+# p laundry
+# p laundry.status
+# p cook
+# p get_mails
+
+class Task
+  def initialize title
+    @title = title
+    @status = "incomplete"
+  end
+
+  def set_status status
+    @status = status
+  end
+
+  def get_title
+    @title
+  end
+
+  def get_status
+    @status
+  end
+
 end
 
-laundry = Task.new('laundry','incomplete')
-laundry.status = "completed"
-cook = Task.new('cook','incomplete')
-get_mails = Task.new('get mails','incomplete')
+laundry = Task.new('laundry')
+cook = Task.new('cook')
+get_mails = Task.new('get_mails')
 
-p laundry
-p laundry.status
-p cook
-p get_mails
+p laundry.get_status
+laundry.set_status('complete')
+p laundry.get_status
+
+
 
 # #### For the following ColorPalette challenge use initialize and `attr_accessor` methods in your class
 # - As a developer, I can create a class called ColorPalette.
@@ -55,7 +85,7 @@ red = ColorPalette.new('cheery', 'ruby', 'blush')
 p red.c1, red.c2, red.c3
 grey = ColorPalette.new('sidewalk Grey', 'smoke', 'Dolphin Gray')
 grey.all_colors
-# Output: 
+# Output:
 # "sidewalk Grey"
 # "smoke"
 # "Dolphin Gray"
@@ -65,4 +95,3 @@ grey.all_colors
 # "Elephant Gray"
 # "smoke"
 # "Dolphin Gray"
-
