@@ -14,9 +14,9 @@
 
 # Story: As a developer, I can create a Salmon that inherits from Fish.
 
-class Animal 
+class Animal
     attr_accessor :age , :alive, :blood_type
-    def initialize()
+    def initialize
         @alive = true
         @age = 0
         @blood_type = ""
@@ -27,26 +27,26 @@ class Animal
         else "dead"
         end
     end
-
+    def increase_age
+        @age += 1
+        if @animal_type == "fish" && @age >= 4 then @alive = false, @age = 4
+        elsif @animal_type == "bear" && @age >= 20 then @alive = false, @age = 20
+        else @age +=1
+        end
+    end
     def animal_info
-        "your animal is #{@age} years old and is #{is_alive} and is #{blood_type}"
+        "your #{@animal_type} is #{@age} years old and is #{is_alive} and is #{blood_type}"
     end
 end
 
 class Fish < Animal
 
-    def initialize 
-        super()
+    def initialize
+        super
         @blood_type = "cold-blooded"
+        @animal_type = "fish"
     end
-    def increase_age
-        @age += 1
-        if @age < 4
-            @alive = true
-        else @alive = false
-        end 
-    end
-    
+
 end
 salmon = Fish.new
 # p salmon.blood_type
@@ -56,8 +56,53 @@ salmon = Fish.new
 #  salmon.increase_age
 #  p salmon.animal_info
 
-# class Mammal < Animal
-#     def initialize
-#         super
-#         @blood_type = "warm-blooded"
+# Story: As a developer, I can create a Mammal that inherits from Animal.
+# Story: As a developer, I can initialize all of my Mammals to be warm_blooded.
+# Story: As a developer, I can create a Bear that inherits from Mammal.
+# Story: As a developer, I can age my Bear up.
+# Story: As a developer, I can see a message that tells me all of my Bear's information.
+# Story: As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+# Story: As a developer, I can create a Mammal of my choice.
+# Story: As a developer, I can interact with the new Mammal via various methods.
+# Story: As a developer, I can see a message that tells me all of my new Mammal's information.
 
+
+class Mammal < Animal
+    def initialize
+        super
+        @blood_type = "warm-blooded"
+    end
+end
+
+class Bear < Mammal
+  def initialize
+    super
+    @blood_type = "warm-blooded"
+    @animal_type = "bear"
+  end
+end
+
+black_bear = Bear.new
+black_bear.animal_info
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+black_bear.increase_age
+p black_bear.animal_info
+
+salmon.increase_age
+salmon.increase_age
+salmon.increase_age
+salmon.increase_age
+p salmon.animal_info
