@@ -41,9 +41,18 @@ class Salmon < Fish
     def initialize(species, age)
         super(species, age)
     end
+    def get_salmon_info
+    "this my info #{@species} and he is #{@age} years old and it is still #{@alive}"
+    end
 end
 
 atlantic = Salmon.new("Atlantic", 4)
+
+p atlantic
+
+atlantic.addOneYear
+p atlantic
+p atlantic.get_salmon_info
 p atlantic
 
 
