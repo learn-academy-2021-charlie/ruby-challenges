@@ -16,10 +16,16 @@ class Animal
     end
 
     # Story: As a developer, I can age my Animal up one year at a time.
-    def ageIncrease
+    def age_increase
         @age += 1
     end
-
+    def alive_details
+        if @alive
+            "alive"
+        else
+            "dead"
+        end
+    end
 end
 
 # Story: As a developer, I can create a Fish that inherits from Animal.
@@ -55,14 +61,14 @@ class Salmon < Fish
     end
 
 # Story: As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
-    def ageIncrease
-        @age += 1
+    def age_increase
+        super
         if @age == 4
             @alive = false
         end
     end
 
-    def getInfo
+    def get_info
         p "This is a #{@species} salmon. alive is #{@alive} and it is #{@age} years old."
     end
 
@@ -71,17 +77,39 @@ end
 pinky = Salmon.new("atlantic")
 p pinky
 p pinky.age
-pinky.ageIncrease # 1
+pinky.age_increase # 1
 p pinky.age
-pinky.getInfo
-pinky.ageIncrease # 2
-pinky.ageIncrease # 3
-pinky.getInfo # alive = true
-pinky.ageIncrease # 4
-pinky.getInfo # alive = false
+pinky.get_info
+pinky.age_increase # 2
+pinky.age_increase # 3
+pinky.get_info # alive = true
+pinky.age_increase # 4
+pinky.get_info # alive = false
 
 # Story: As a developer, I can create a Mammal that inherits from Animal.
+class Mammal < Animal
 
+    def initialize
+        super()
+        @warm_blooded = true
+    end
+end
+
+class Bear < Mammal
+    def age_increase
+        super
+        if @age == 20
+            @alive = false
+        end
+    end
+    def get_info
+        p "This is Smokey the Bear. He's #{@age} years old and he is #{alive_details}."
+    end
+
+end
+bear = Bear.new
+bear.age_increase
+bear.get_info
 # Story: As a developer, I can initialize all of my Mammals to be warm_blooded.
 
 # Story: As a developer, I can create a Bear that inherits from Mammal.
