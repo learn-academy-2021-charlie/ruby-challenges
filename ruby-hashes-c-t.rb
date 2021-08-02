@@ -37,3 +37,12 @@ end
 my_phone.each do |key, value|
     p "My phone has #{value}, #{key}"
 end    
+
+# As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+def new_phone hash
+    hash.map do |key, value|
+        "#{key.capitalize}: #{value}"
+    end
+end 
+p new_phone my_phone
