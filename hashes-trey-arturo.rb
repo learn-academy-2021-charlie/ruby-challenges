@@ -24,3 +24,12 @@ my_phone[:youtube] = "watch dog and cat videos"
 #DELETE
 my_phone.delete (:gmail)
 p my_phone
+
+# As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+def properInfo hash
+    hash.map do |key, value|
+       array = [key.capitalize , value]        
+    end
+end
+p properInfo(my_phone)
