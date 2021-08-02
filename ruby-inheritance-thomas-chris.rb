@@ -14,8 +14,17 @@
 # Story: As a developer, I can create a Mammal that inherits from Animal.
 # Story: As a developer, I can initialize all of my Mammals to be warm_blooded.
 # Story: As a developer, I can create a Bear that inherit# Story: As a developer, I can age my Bear up.
-
 # Story: As a developer, I can see a message that tells me all of my Bear's information.s from Mammal.
+# Story: As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+# Story: As a developer, I can create a Mammal of my choice.
+# Story: As a developer, I can interact with the new Mammal via various methods.
+# Story: As a developer, I can see a message that tells me all of my new Mammal's information.
+
+module Swimming
+    def swim?
+        "I can swim"
+    end
+end
 
 
 class Animal
@@ -73,6 +82,8 @@ class Salmon < Fish
         #     @age
         end
     end
+
+    include Swimming
 end
 
 salmon = Salmon.new'Atlantic'
@@ -103,6 +114,9 @@ class Bear < Mammal
         super()
         @age = 20
     end
+
+include Swimming
+
     def get_bear_info
         animal_info
         @animal_info + "The bear is #{@warm_blooded}"
@@ -124,19 +138,38 @@ p bear1.dead_or_alive
 p bear1.get_bear_info
 
 
-# Story: As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+class BlackMamba < Mammal 
 
-# Story: As a developer, I can create a Mammal of my choice.
+    def initialize
+        super()
+    end
 
-# Story: As a developer, I can interact with the new Mammal via various methods.
+    include Swimming
 
-# Story: As a developer, I can see a message that tells me all of my new Mammal's information.
+end
+
+black_mamba = BlackMamba.new
+black_mamba.ager
+p black_mamba.animal_info
+
+collection = []
+collection << bear1
+collection << salmon
+
+p collection
 
 # Stretch Challenges
 # Story: As a developer, I can keep a collection of two of each Animal. Hint: You'll want to add your Animals into an array.
 
 # Story: As a developer, I can sort my collection of Animals based on age. Hint: Find out how the spaceship operator can help you with an array.
 
+
+ p collection.sort{ |bear1, salmon| bear1.age <=> salmon.age }
+
 # Super Stretch Challenge
 # Story: As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
+p bear1.swim?
+p salmon.swim?
+p black_mamba.swim?
+
 # Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
