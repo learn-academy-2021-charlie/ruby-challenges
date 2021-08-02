@@ -23,7 +23,7 @@ class Animal
         if @alive
             "alive"
         else
-            "dead"
+            "dead :("
         end
     end
 end
@@ -94,10 +94,18 @@ class Mammal < Animal
         @warm_blooded = true
     end
 end
+# Story: As a developer, I can initialize all of my Mammals to be warm_blooded.
 
+# Story: As a developer, I can create a Bear that inherits from Mammal.
+
+# Story: As a developer, I can age my Bear up.
+
+# Story: As a developer, I can see a message that tells me all of my Bear's information.
+
+# Story: As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
 class Bear < Mammal
     def age_increase
-        super
+        super()
         if @age == 20
             @alive = false
         end
@@ -108,20 +116,28 @@ class Bear < Mammal
 
 end
 bear = Bear.new
-bear.age_increase
+for i in (1..20) do 
+    bear.age_increase 
+end
 bear.get_info
-# Story: As a developer, I can initialize all of my Mammals to be warm_blooded.
-
-# Story: As a developer, I can create a Bear that inherits from Mammal.
-
-# Story: As a developer, I can age my Bear up.
-
-# Story: As a developer, I can see a message that tells me all of my Bear's information.
-
-# Story: As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
 
 # Story: As a developer, I can create a Mammal of my choice.
 
+class Dog < Mammal
+    def initialize(name, species, size)
+        super()
+        @name = name
+        @species = species
+        @size = size
+    end
+    def get_info
+        "#{@name} is a #{@size} sized #{@species} and is #{alive_details} at #{@age} years old."
+    end
+end
+
+dog = Dog.new("Gizmo", "Beagle", "medium")
+dog.age_increase
+p dog.get_info
 # Story: As a developer, I can interact with the new Mammal via various methods.
 
 # Story: As a developer, I can see a message that tells me all of my new Mammal's information.
