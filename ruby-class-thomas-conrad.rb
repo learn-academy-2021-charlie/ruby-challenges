@@ -110,3 +110,5 @@ bleu = ColorPalette.new 'mango', 'citrus', 'blood red'
 p green.all_colors
 green.color1 = "jade"
 p green.all_colors
+red.color2 = "orange"
+p red.all_colors 
