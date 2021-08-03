@@ -1,24 +1,123 @@
 # Challenge: Animal Kingdom
 # Story: As a developer, I can make an Animal.
+# class Animal 
+#     attr_accessor :alive,:age
+#     def initialize 
+#         @alive = true
+#         @age = 0
+#     end
+
+#     def ager
+#         @age += 1
+#     end
+
+# end
+
+# tiger = Animal.new
+
+# puts tiger.alive
+# puts tiger.age
+# tiger.ager 
+# puts tiger.age
+
 class Animal 
-    attr_accessor :alive,:age
+    attr_accessor :alive, :age
     def initialize 
         @alive = true
         @age = 0
+        @max_age = 1000
     end
-
     def ager
         @age += 1
+        check_age
     end
-
+    def check_age
+        if @age >= @max_age
+            @alive = false
+        end
+    end
+    def alive_or_dead
+        if @alive == true
+            "alive"
+        else 
+            "dead"
+        end
+    end
 end
 
-tiger = Animal.new
+lion = Animal.new
+lion.alive
 
-puts tiger.alive
-puts tiger.age
-tiger.ager 
-puts tiger.age
+class Fish < Animal
+    attr_accessor :cold_blooded
+    def initialize
+        super()
+     @cold_blooded = true
+    end
+end
+
+fish = Fish.new
+ fish.cold_blooded
+
+class Salmon < Fish
+    attr_accessor :species
+    def initialize species 
+        super()
+        @species = species
+        @max_age = 4
+    end
+    def get_info
+        "My #{species} salmon is #{alive_or_dead} and #{age} years old"
+    end
+end
+
+salmon1 = Salmon.new "sockeye"
+salmon2 = Salmon.new "atlantic"
+salmon1.age = 3
+salmon1.ager
+# salmon1.check_age
+ salmon1.ager
+salmon1
+
+class Mammal < Animal
+    attr_accessor :species
+    def initialize
+        super()
+        @species = species
+        @warm_blooded = true
+    end
+    def get_info
+        "My #{species} is #{age} and is #{alive_or_dead}"
+    end
+end
+
+class Bear < Mammal
+    def initialize
+        super()
+        @max_age = 20
+    end
+    def get_info
+        "My bear is #{age}"
+    end
+end
+
+black_bear = Bear.new
+black_bear.age = 20
+black_bear.ager
+p black_bear
+
+rabbit = Mammal.new
+rabbit.age = 3
+rabbit.species = "holland lop"
+rabbit.get_info
+
+pets_array = []
+pets_array << salmon1
+pets_array << black_bear
+pets_array
+pets_array.sort{|a, b| a <=> b a.age, b.age}
+p pets_array
+
 
 # Story: As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 
