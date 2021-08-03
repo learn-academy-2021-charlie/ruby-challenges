@@ -1,8 +1,8 @@
 class Animal 
     attr_accessor :alive, :age
-    def initialize(alive, age)
+    def initialize
         @alive = true
-        @age = 0
+        @age = 44
     end
     def ager 
         @age= @age+1
@@ -18,21 +18,19 @@ end
 
 
 class Fish < Animal
-    attr_accessor :alive, :age
-    def initialize(alive, age, blood)
-        super(alive, age)
+    attr_accessor :blood
+    def initialize 
+        super
         @blood = "cold blooded"
     end
 end
 
-# salmon = Fish.new("true", 3, "cold blooded")
-# salmon.ager
-
 class Salmon < Fish
-    attr_accessor :alive, :age, :blood, :species
-    def initialize(alive, age, blood, species)
-        super(alive, age, blood)
-        @species = "sock eye salmon"
+    attr_accessor :species
+    def initialize species # initialize method used to create new properties besides super().
+        super()
+        # super method used to get initialize from parent class.
+        @species = species
     end
     def get_animal_info
         animal_info
@@ -40,29 +38,38 @@ class Salmon < Fish
     end
     def goodbye_salmon 
         if @age >=4 
-            @alive=false
+            @alive = false
         end
     end
 
 end
 
-my_salmon = Salmon.new("true", 0, "cold blooded", "sock eye")
-
-my_salmon.ager
-my_salmon.ager
-my_salmon.ager
-my_salmon.ager
-my_salmon.ager
+my_salmon = Salmon.new 'sockeye'
+p my_salmon
 my_salmon.ager
 my_salmon.goodbye_salmon
-
-
 p my_salmon.get_animal_info
 
 class Mammal < Animal
-    attr_accessor :alive, :age
-    def initialize(alive, age, blood)
-        super(alive, age)
+    attr_accessor :blood
+    def initialize
+        super
         @blood = "warm blooded"
     end
 end
+
+class Bear < Mammal
+    def initialize
+        super
+    end
+
+    def get_animal_infos
+        animal_info
+         @info_string + "your bear is #{@blood}."
+    end
+
+end
+
+my_bear = Bear.new()
+my_bear.ager
+p my_bear.animal_info
