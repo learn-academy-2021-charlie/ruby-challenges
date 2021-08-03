@@ -5,4 +5,11 @@ class Task
     @description = description
     @status = status
   end
+  def task_completed 
+    @status = "Done"
+  end
+  def get_info
+    "Your task #{@title} to #{@description} is #{@status}"
+  end
 end
+

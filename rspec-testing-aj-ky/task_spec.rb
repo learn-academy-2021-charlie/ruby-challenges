@@ -29,7 +29,7 @@ describe Task do
     my_task = Task.new
     expect(my_task.status).to be_a String
     expect(my_task.status).to eq 'in progress'
-    expect{ my_task.status = 'Done' }.to change{ my_task.status }.from('in progress').to('Done')
+    expect{ my_task.task_completed }.to change{ my_task.status }.from('in progress').to('Done')
   end
 
 # Story: As a developer, when I print a Task that is done, its status is shown.
@@ -37,10 +37,12 @@ describe Task do
   it 'includes the status when the task is printed' do
     my_task = Task.new
     my_task.status = "Done"
-    expect(p my_task).to have_attribute(@status => 'Done')
+    expect(my_task.status).to eq('Done')
+    expect(my_task.status).to be_a String
+    expect(my_task.get_info).to include("Done")
   end
 
-# Story: As a developer, I can add all of my Tasks to a TaskList.
+# # Story: As a developer, I can add all of my Tasks to a TaskList.
 
 # Story: As a developer with a TaskList, I can print the completed items.
 
