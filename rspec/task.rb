@@ -21,8 +21,9 @@
 # Story: As a developer with a TaskList, I can print the incomplete items.
 
 class Task
-    # attr_accessor :title
-    # def initialize title
-    #     @title = title
-    # end
+    attr_accessor :title, :description
+    def initialize 
+        @title = title
+        @description = description
+    end
 end
