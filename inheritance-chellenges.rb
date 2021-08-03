@@ -6,6 +6,9 @@ class Animal
         @age = age
         @alive = true 
     end
+    def <=>(other_animal)
+        self.age <=> other_animal.age
+    end
     def addOneYear #add one year to age every time you call upon this method!
         @age = @age + 1
     end
@@ -53,16 +56,16 @@ end
 atlantic = Salmon.new('salmon' ,'atlantic', 'herbivor', 4)
 sockeye = Salmon.new('salmon' ,'sockeye', 'herbivor', 2)
 
-p atlantic
-atlantic.addOneYear
-# Checking the age
-p sockeye.age #should return 2
-p atlantic.age #should return 5
+# p atlantic
+# atlantic.addOneYear
+# # Checking the age
+# p sockeye.age #should return 2
+# p atlantic.age #should return 5
 
-p atlantic.get_salmon_info
+# p atlantic.get_salmon_info
 
-p sockeye.alive #alive = true
-p atlantic.alive #alive = false
+# p sockeye.alive #alive = true
+# p atlantic.alive #alive = false
 
 # Story: As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life. Hint: You will need a method that changes the status of alive in the initialize method of Animal.
 
@@ -80,23 +83,35 @@ class Mammal < Animal
 end
 
 monkey = Mammal.new('monkey' ,'bananas', 7)
-p monkey
+# p monkey
 bear = Mammal.new('bear' ,'honey', 3)
-bear.addOneYear #aging the bear
-p bear
-p bear
-bear.addOneYear
+# bear.addOneYear #aging the bear
+# p bear
+# p bear
+# bear.addOneYear
     
 # Story: As a developer, I can see a message that tells me all of my Bear's information. - working on this. Will try to put the method to get info in the Animal class.(later)
 
-p bear.get_mammal_info
+# p bear.get_mammal_info
 
 skunk = Mammal.new('skunk', 'fruits', 2)
-p skunk
-p skunk.get_mammal_info
-p skunk.addOneYear
-p skunk.get_mammal_info
+# p skunk
+# p skunk.get_mammal_info
+# p skunk.addOneYear
+# p skunk.get_mammal_info
 
 
+my_collection = []
+# my_collection << skunk 
+my_collection << bear
+my_collection << atlantic
+my_collection << sockeye
+my_collection << skunk
+my_collection << bear
+my_collection << sockeye
+my_collection << atlantic
+# p my_collection
 
+p my_collection.sort # now we can use sort to sort our animal collection by the animals age. Check out the function that we set up in our parent class Animal.
+# p my_collection
 
