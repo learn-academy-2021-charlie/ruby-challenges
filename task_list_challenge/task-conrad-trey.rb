@@ -1,12 +1,12 @@
 class Task
-# attr_accessor :title
-    def initialize 
-        @title = title
+ attr_accessor :title, :description 
+ attr_reader :task_progress
+    def initialize
+        @title = ''
+        @description = ''
+        @task_progress = 'in progress'
     end
-    def title=title_task
-        @title = title_task
-    end
-    def title
-        @title
+    def complete
+        @task_progress = 'complete'
     end
 end
