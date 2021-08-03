@@ -42,32 +42,24 @@ describe 'Task' do
         expect(task.done).to eq 'done'
     end 
 
+    # Stretch: Due Date
+    # Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.  
+    it 'Gives a Task a due Date.' do
+        task1 = Task.new
 
-    # Story: As a developer, I can add all of my Tasks to a TaskList.
-    it 'puts tasks in a taskliist' do
-        task_list = TaskList.new
+        task1.due_date = Date.new(2021, 8, 3)
 
-        task_list.tasks << Task.new
-        task_list.tasks << Task.new
+        expect(task1.due_date).to be_a Date
+        expect(task1.due_date).to eq Date.new(2021, 8, 3)
 
-        expect(task_list.tasks.length).to eq 2
-        expect(task_list.tasks).to be_a Array
-
-    end 
-
+    end
+   
 end
 
 
 
-# Story: As a developer with a TaskList, I can print the completed items.
-
-# Story: As a developer with a TaskList, I can print the incomplete items.
 
 
-# Stretch: Due Date
-# Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
-
-# Story: As a developer with a TaskList, I can list all the not completed items that are due today.
 
 # Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
 
