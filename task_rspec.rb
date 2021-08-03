@@ -14,6 +14,7 @@
 
 require 'rspec'
 require_relative 'task'
+require_relative 'tasklist'
 
 describe Task do
   it 'has to be real' do
@@ -36,3 +37,5 @@ describe Task do
     expect(first_list.status).to eq 'done'
   end
   end
+
+
