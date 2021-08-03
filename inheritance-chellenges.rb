@@ -1,6 +1,7 @@
 class Animal
-    attr_accessor :diet, :age, :alive
-    def initialize(diet, age)
+    attr_accessor :type, :diet, :age, :alive
+    def initialize(type, diet, age)
+        @type = type
         @diet = diet
         @age = age
         @alive = true 
@@ -8,8 +9,9 @@ class Animal
     def addOneYear #add one year to age every time you call upon this method!
         @age = @age + 1
     end
+    # add method so we can access info from all child classes?
 end
-
+# remember to pass in the @type value as an argument
 # dog = Animal.new('carnivor', 0) #creating the animal! - instantiating the Animal class, passing in the arguments, and assigning it the the dog variable!!!
 # cat = Animal.new('carnivor', 0)
 # shark = Animal.new('herbivor', 3)
@@ -27,8 +29,8 @@ end
 # p cat 
 
 class Fish < Animal
-    def initialize(diet, age)
-        super(diet, age)
+    def initialize(type, diet, age)
+        super(type, diet, age)
         @cold_blooded = true
     end
 end
@@ -38,8 +40,8 @@ end
 # p gold_fish
 
 class Salmon < Fish
-    def initialize(species, diet, age)
-        super(diet, age)
+    def initialize(type ,species, diet, age)
+        super(type, diet, age)
         @species = species
         @age >= 4 ? @alive = false : true #check this out!!! - ternary orperator to check if the Salmon is over or equal 4, and reasing a boolean value to alive! Ruby is cool!
     end
@@ -48,8 +50,8 @@ class Salmon < Fish
     end
 end
 
-atlantic = Salmon.new('atlantic', 'herbivor', 4)
-sockeye = Salmon.new('sockeye', 'herbivor', 2)
+atlantic = Salmon.new('salmon' ,'atlantic', 'herbivor', 4)
+sockeye = Salmon.new('salmon' ,'sockeye', 'herbivor', 2)
 
 p atlantic
 atlantic.addOneYear
@@ -68,22 +70,33 @@ p atlantic.alive #alive = false
 # Story: As a developer, I can create a Mammal that inherits from Animal.
 
 class Mammal < Animal
-    def initialize (diet, age)
-        super(diet, age)
+    def initialize (type, diet, age)
+        super(type ,diet ,age)
         @cold_blooded = false
+    end
+    def get_mammal_info
+        "I am a #{@type} and I like to eat#{@diet}. I am #{@age} years old."
     end
 end
 
-monkey = Mammal.new('bananas', 7)
+monkey = Mammal.new('monkey' ,'bananas', 7)
 p monkey
-bear = Mammal.new('honey', 3)
+bear = Mammal.new('bear' ,'honey', 3)
 bear.addOneYear #aging the bear
 p bear
 p bear
+bear.addOneYear
     
-# Story: As a developer, I can see a message that tells me all of my Bear's information. - working on this. Will try to put the method to get info in the Animal class.
+# Story: As a developer, I can see a message that tells me all of my Bear's information. - working on this. Will try to put the method to get info in the Animal class.(later)
 
-    
+p bear.get_mammal_info
+
+skunk = Mammal.new('skunk', 'fruits', 2)
+p skunk
+p skunk.get_mammal_info
+p skunk.addOneYear
+p skunk.get_mammal_info
+
 
 
 
