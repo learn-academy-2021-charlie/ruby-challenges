@@ -86,29 +86,58 @@
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
 # As a developer, I can change one or more colors of a given palette.
 
-class ColorPalette
-  attr_accessor :color1, :color2, :color3
-  def initialize color1, color2, color3
-    @color1 = color1
-    @color2 = color2
-    @color3 = color3
-  end
+# class ColorPalette
+#   attr_accessor :color1, :color2, :color3
+#   def initialize color1, color2, color3
+#     @color1 = color1
+#     @color2 = color2
+#     @color3 = color3
+#   end
 
-  def all_colors
-     "#{@color1}, #{@color2}, #{@color3} "
-  end
+#   def all_colors
+#      "#{@color1}, #{@color2}, #{@color3} "
+#   end
 
+# end
+
+# green = ColorPalette.new 'Chartreuse', 'Kelly', 'Seafoam'
+# red = ColorPalette.new 'magenta', 'burgendy', 'scarlet'
+# bleu = ColorPalette.new 'mango', 'citrus', 'blood red'
+# # p green.color1
+# # p red.color2
+# # p bleu.color3
+
+# p green.all_colors
+# green.color1 = "jade"
+# p green.all_colors
+
+class Vehicle 
+    attr_accessor :vehicle1, :vehicle2, :vehicle3
+    def initialize vehicle1, vehicle2, vehicle3
+        @vehicle1 = vehicle1
+        @vehicle2 = vehicle2
+        @vehicle3 = vehicle3
+    end
+    def all_vehicles
+        "#{vehicle1}, #{vehicle2}, #{vehicle3}."
+    end
 end
 
-green = ColorPalette.new 'Chartreuse', 'Kelly', 'Seafoam'
-red = ColorPalette.new 'magenta', 'burgendy', 'scarlet'
-bleu = ColorPalette.new 'mango', 'citrus', 'blood red'
-# p green.color1
-# p red.color2
-# p bleu.color3
+cars = Vehicle.new 'Honda Civic', 'Honda Accord', 'Toyota Prius'
+trucks = Vehicle.new 'Tesla Cyber Truck', 'Ford F150', 'Toyota Tacoma Pickup'
+motorcylces = Vehicle.new 'Harley', 'Suzuki', 'Razor'
+
+# p cars.vehicle1
+
+
+p cars.all_vehicles
+cars.vehicle2 = 'Ford Explorer'
+p cars.all_vehicles
+        
 
 p green.all_colors
 green.color1 = "jade"
 p green.all_colors
 red.color2 = "orange"
 p red.all_colors 
+
