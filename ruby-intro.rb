@@ -1,4 +1,4 @@
-my_favorite_number = 7
+# my_favorite_number = 7
 # my_favorite_number = my_favorite_number / 2
 # someones_favorite = 13
 # someones_favorite = 7
@@ -58,8 +58,16 @@ my_favorite_number = 7
 #     end
 # end
 
-# p is_even 5
+# def is_even2 n1
+#     if n1.even?
+#         'even'
+#     else
+#         n1
+#     end
+# end
 
+# # p is_even 5
+# p is_even2 5
 
 # def is_valid(n1)
 #     if n1 >= 1 && n1 <= 10
@@ -95,20 +103,28 @@ my_favorite_number = 7
 # User ID cannot contain the following characters: !#$ or spaces
 # Password cannot be the word "password".
 
-
-
 # def login(id, password)
-# arr = [ '!', '#', '$' ]
-#     if id != password && id.length >= 6 && password.length >= 6 && arr.any? { |letter| password.include? letter } &&  password != 'password' && id.exclude? '!' && id.exclude? '#' && id.exclude? '$' && id.exclude? ' '
+#     arr = [ '!', '#', '$', ' ' ]
+#     # !! -- here we can check each element in the array with .any? -- 
+#     # p arr.any? { |letter| id.include? letter }
+#     # p !arr.any? { |letter| password.include? letter }
+#     if arr.any? { |letter| id.include? letter }
+#         'first bad'
+#     elsif !arr.any? { |letter| password.include? letter }
+#         "second bad"
+#     elsif password.length < 6 || id.length < 6
 
-#         "good"
+#         "third bad"
+#     # # elsif password == 'password'  this is checked by the second elsif    
+#     #     "bad"
 #     else 
-#         "bad"
+#         "good"
+#         # prompt here for id and password
 #     end
 # end
-# p login("sss!sss", "asdfq!")
+# p login("sssssss", "pass#word")
 
-# arr.any? { |letter| id.exclude? letter } 
+
 # name1= "raul"
 # p name1.include? 'al'
 # arr = [ '!', '#', '$' ]
@@ -116,9 +132,9 @@ my_favorite_number = 7
 # p arr.any? { |letter| s.include? letter } # Will return true if any element is present
 
 
+# Blocks and Iterables
+
 # Write a loop that prints the numbers 1 to 20.
-
-
 
 # range = 1..20
 # range.each do |value|
@@ -139,32 +155,60 @@ my_favorite_number = 7
 #    num += 1
 # end
 
-
 # Write a loop that prints only even numbers from 20 to 0.
 
-even_range = Array(1..20).reverse
+# even_range = Array(1..20).reverse
 
-#     even_range.map do |value|
-#          value.even?
-         
-     
-        
+# #     even_range.map do |value|
+# #          value.even?
+           
+# #     end
+
+# even_range.each do |value|
+#     if value % 2 == 0
+#         p value
 #     end
-
-even_range.each do |value|
-    if value % 2 == 0
-        p value
-    end
-    end
-
-
-
-
+# end
 
 # Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
+
+def mult_by_five arr
+    arr.map do |value|
+        value * 5
+    end
+end
+
+p mult_by_five [1, 3] 
+
 # Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
+
+lowercase_words = ['this', 'and', 'that']
+
+def capitalize arr
+    arr.map do |value|
+        value.capitalize
+    end
+end
+
+p capitalize lowercase_words
+
 # Create a method that takes in an array of numbers and returns the largest number in the array.
+num_arr = [1, 4, 6, 8]
+
+def get_largest arr
+    puts arr.max
+end
+
+get_largest num_arr
+
 # Create a method that takes in an array of numbers and returns the smallest number in the array.
+
+def get_smallest arr 
+    puts arr.min
+end
+
+get_smallest num_arr
+
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
 # Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
