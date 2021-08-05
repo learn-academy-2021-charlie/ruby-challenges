@@ -9,6 +9,52 @@
 # Story: As a developer, I can see that my Salmon is cold-blooded.
 
 # Story: As a developer, I can make an Animal.
+class Animal
+    attr_accessor  :alive, :age, :name
+    def initialize(name, age)
+        @alive = true
+        @age = 0
+        @name = name
+        @is_alive = ""
+    end
+    def age_up 
+        @age += 1
+    end
+    def is_alive
+        if @alive == false
+            @is_alive = "is not alive"
+        else
+            @is_alive = "is alive"
+        end
+    end
+    def get_info
+        @info_string = "#{@name} is #{@age} years old and #{@is_alive}"
+    end
+end
+
+# turtle = Animal.new "turtle"
+
+# class Turtle < Animal
+#     def initialize(name)
+#         super(name)
+#     end
+# end
+# turtle.is_alive
+# p turtle.get_info
+class Fish < Animal
+    def initialize(name, age)
+        super(name, age)
+        @cold_blooded = true
+    end
+    def end_life
+        if @age == 4
+            @alive = false
+        end
+    end
+end
+class Salmon < Fish
+    def initialize(name, age, species)
+        super(name, age)
 
 class Animal
     attr_accessor :alive, :age
@@ -59,6 +105,21 @@ class Salmon < Fish
         end
     end
     def get_salmon_info
+        @gsalmon_info = "My #{@species} #{@name} #{@is_cold_blooded}"
+    end
+    
+end
+salmon = Salmon.new "salmon", 0, "Atlantic"
+salmon.is_cold_blooded
+# p salmon.get_salmon_info
+salmon.is_alive
+salmon.age_up
+salmon.age_up
+salmon.age_up
+salmon.age_up
+salmon.end_life
+p salmon.get_info
+# Story: As a developer, I can age my Salmon up.
         @salmon_info = "My #{@species} #{@name} #{@is_cold_blooded}"
     end
 end
