@@ -1,4 +1,4 @@
- class Task
+class Task
     def initialize title
         @title = title
         @status = "incomplete"
