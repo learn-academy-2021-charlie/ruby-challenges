@@ -1,0 +1,2 @@
+module GaladoeHelper
+end
